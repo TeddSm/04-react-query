@@ -69,8 +69,6 @@ export default function App() {
       <Toaster />
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
-      <MovieGrid movies={movies} onSelect={setSelectedMovie} />
-
       {totalPages > 1 && (
         <ReactPaginate
           pageCount={totalPages}
@@ -84,7 +82,7 @@ export default function App() {
           previousLabel="←"
         />
       )}
-
+      <MovieGrid movies={movies} onSelect={setSelectedMovie} />
       {selectedMovie && (
         <MovieModal movie={selectedMovie} onClose={handleCloseModal} />
       )}
